@@ -1,6 +1,3 @@
-# Azure-DE-Project-Resources
-
-
 # Azure Data Engineering Project – End-to-End Car Sales Data Pipeline
 
 ## Overview
