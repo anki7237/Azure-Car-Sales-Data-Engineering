@@ -131,6 +131,30 @@ Executes the incremental loading process using a watermark table and stored proc
 
 ---
 
+
+## Data Analysis and Visualization
+
+As part of the project, I performed exploratory data analysis using PySpark in Azure Databricks.
+
+### Analysis Performed
+
+Calculated the total number of units sold for each branch across different years.
+
+```python
+display(
+    df.groupBy(col("Year"), col("BranchName"))
+      .agg(sum(col("Units_Sold")).alias("Total_Units"))
+      .orderBy(col("Year").asc(), col("Total_Units").desc())
+)
+```
+
+### Visualization
+
+Using Databricks' built-in visualization features, I created an interactive chart to analyze yearly unit sales by branch. This visualization helps identify the top-performing branches and compare sales trends across different years.
+
+
+<img width="954" height="357" alt="visualization (1)" src="https://github.com/user-attachments/assets/cb889aa5-4c2f-4770-885a-3c28c1fc79d2" />
+
 ## Future Enhancements
 
 * CI/CD using Azure DevOps
